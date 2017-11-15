@@ -1,99 +1,61 @@
 app.factory('dataFactory', function($http) {
 
-  var myService = {
+    var myService = {
+        httpRequest: function(url, method, params, dataPost, upload) {
+            var passParameters = {};
+            passParameters.url = url;
 
-    httpRequest: function(url,method,params,dataPost,upload) {
-      var passParameters = {};
+            if (typeof method == 'undefined') {
+                passParameters.method = 'GET';
+            } else {
+                $('.loader').removeClass("hide");
+                $('.loader').html("LOADING....");
+                passParameters.method = method;
+            }
 
-      passParameters.url = url;
+            if (typeof params != 'undefined') {
+                passParameters.params = params;
+                passParameters.params = params;
+            }
 
-      if (typeof method == 'undefined'){
+            if (typeof dataPost != 'undefined') {
+                passParameters.data = dataPost;
+            }
 
-        passParameters.method = 'GET';
+            if (typeof upload != 'undefined') {
+                passParameters.upload = upload;
+            }
 
-      }else{
-        $('.loader').removeClass("hide");
-        $('.loader').html("LOADING....");
-        passParameters.method = method;
+            var promise = $http(passParameters).then(function(response) {
+                if (typeof response.data == 'string' && response.data != 1) {
+                    if (response.data.substr('loginMark')) {
+                        location.reload();
+                        return;
+                    }
+                    $.gritter.add({
+                        title: 'Application',
+                        text: response.data
+                    });
+                    return false;
+                }
 
-      }
+                if (response.data.jsMessage) {
+                    $.gritter.add({
+                        title: response.data.jsTitle,
+                        text: response.data.jsMessage
+                    });
+                }
 
-      if (typeof params != 'undefined'){
+                return response.data;
 
-        passParameters.params = params;
-
-        passParameters.params = params;
-
-      }
-
-      if (typeof dataPost != 'undefined'){
-
-        passParameters.data = dataPost;
-
-      }
-
-      if (typeof upload != 'undefined'){
-
-       passParameters.upload = upload;
-
-     }
-
-     var promise = $http(passParameters).then(function (response) {
-
-      if(typeof response.data == 'string' && response.data != 1){
-
-        if(response.data.substr('loginMark')){
-
-          location.reload();
-
-          return;
-
+            }, function() {
+                $.gritter.add({
+                    title: 'Application',
+                    text: 'An error occured while processing your request.'
+                });
+            });
+            return promise;
         }
-
-        $.gritter.add({
-
-          title: 'Application',
-
-          text: response.data
-
-        });
-
-        return false;
-
-      }
-
-      if(response.data.jsMessage){
-
-        $.gritter.add({
-
-          title: response.data.jsTitle,
-
-          text: response.data.jsMessage
-
-        });
-
-      }
-
-      return response.data;
-
-    },function(){
-
-      $.gritter.add({
-
-        title: 'Application',
-
-        text: 'An error occured while processing your request.'
-
-      });
-
-    });
-
-     return promise;
-
-   }
-
- };
-
- return myService;
-
+    };
+    return myService;
 });

@@ -1,0 +1,59 @@
+<div class="loader-wrapper">
+   <div class="loader hide"></div>
+</div>
+<div class="main-content">
+<div class="random-beers">
+   <h1>Distilled SCH Beer Application</h1>
+   <div class="col-left big">
+      <h2>{{beerName}}</h2>
+      <div class="text">{{beerDescription}}</div>
+   </div>
+   <div class="image col-right small">
+      <img ng-src="{{beerImage}}"/>
+   </div>
+</div>
+<div class="clear-both"></div>
+<div class="buttons">
+   <input type="button" value="Another Beer" ng-click="anotherBeer()" />
+   <input type="button" value="More From This Brewery" ng-click="breweryBeers()" />    
+</div>
+<hr>
+<div class='search-form'>
+   <form name="searchForm" class="search-form">
+      <input type="text" ng-model="name" ng-trim="false" ng-pattern="regex" name="input" class="input-medium search-query" placeholder="Search with name" required/>
+      <button type="submit" class="btn" ng-click="formsubmit(searchForm.$valid)"  ng-disabled="userForm.$invalid">Submit </button>
+      <br>
+      <input type="radio" ng-model="type" ng-checked="true" id="beer-select" name="type" value="beer"/><label for="beer-select">Beer</label>
+      <input type="radio" ng-model="type" id="brewery-select" name="type" value="brewery"/><label for="brewery-select">Brewery</label>
+   </form>
+</div>
+<div class="brewery-beers hide">
+   <div ng-repeat="(key, value) in brewBeers">
+      <div class="col-left small">
+         <h2 class = "search-name">{{value.name}}</h2>
+         <div class= "search-image"><img ng-src="{{value.image}}"/></div>
+      </div>
+      <div class="col-right big">
+         <div class= "search-text">{{value.description}}</div>
+      </div>
+      <div class=" tab-div clear-both"></div>
+      <hr>
+   </div>
+</div>
+<div class="search-types hide">
+   <div ng-repeat="(key, value) in searchTypes">
+      <div class="col-left small">
+         <h2 class = "search-name">{{value.name}}</h2>
+         <div class= "search-image"><img ng-src="{{value.image}}"/></div>
+      </div>
+      <div class="col-right big">
+         <div class= "search-text">{{value.description}}</div>
+      </div>
+      <div class=" tab-div clear-both"></div>
+      <hr>
+   </div>
+</div>
+<div class="search-type-text hide">
+<p></p>
+<div>
+</div>
