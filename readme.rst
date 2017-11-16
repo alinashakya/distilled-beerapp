@@ -15,8 +15,8 @@ Other Information
 
 - It uses one page application to display random beers, beers in a brewery and search sections.
 - You need to have Redis server installed in the system => https://redis.io/
-- Composer packages like phpunit are used for testing purpose. If composer is not installed, it should be installed else "composer update" is used to add all packages in vendor folder.
-- Javascript library "AngularJs" is used which is maintained in app folder. "angular.min.js" is used for using angular properties whereas "angular-route.min.js" is used for routing purpose.
+- Composer is required to manage dependecies.
+- Javascript library "AngularJs" is used which is maintained in "app" folder. "angular.min.js" is used for using angular properties whereas "angular-route.min.js" is used for routing purpose.
 - BreweryDb library is used to connect to brewery DB Api to get beers and breweries informations.
 - Used some classes from Bootstrap library.
 - It has been successfully tested in chrome and firefox.
