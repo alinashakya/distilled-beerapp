@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Beer_test" file="/var/www/html/distilled-beerapp/application/tests/controllers/Beer_test.php" tests="3" assertions="12" failures="0" errors="0" time="7.233986">
+    <testcase name="test_getRandomBeer" class="Beer_test" file="/var/www/html/distilled-beerapp/application/tests/controllers/Beer_test.php" line="14" assertions="4" time="4.728633">
+      <system-out> </system-out>
+    </testcase>
+    <testcase name="test_getBreweryBeers" class="Beer_test" file="/var/www/html/distilled-beerapp/application/tests/controllers/Beer_test.php" line="31" assertions="4" time="1.922631"/>
+    <testcase name="test_searchBeerBrewery" class="Beer_test" file="/var/www/html/distilled-beerapp/application/tests/controllers/Beer_test.php" line="48" assertions="4" time="0.582722"/>
+  </testsuite>
+</testsuites>
