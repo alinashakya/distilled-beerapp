@@ -35,8 +35,7 @@ class Beer extends CI_Controller
                 );
             }
             echo json_encode($data);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             throw new Exception("Error Processing Request, $e->getMessage()", 1);
         }
         
@@ -68,8 +67,7 @@ class Beer extends CI_Controller
             } else {
                 $this->getRandomBeer();
             }
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             throw new Exception("Error Processing Request, $e->getMessage()", 1);
         }
     }
@@ -104,8 +102,7 @@ class Beer extends CI_Controller
                 );
             }
             echo json_encode($data);
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             throw new Exception("Error Processing Request, $e->getMessage()", 1);
         }
     }

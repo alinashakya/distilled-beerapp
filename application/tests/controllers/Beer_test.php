@@ -15,8 +15,7 @@ class Beer_test extends CIPHPUnitTestCase
     {
         try {
             $output = $this->request('GET',['Beer','getRandomBeer']);
-        }
-        catch (CIPHPUnitTestExitException $e) {
+        } catch (CIPHPUnitTestExitException $e) {
             $output = 'Failed to run';
         }
         $this->assertContains('name', $output);
@@ -32,8 +31,7 @@ class Beer_test extends CIPHPUnitTestCase
     {
         try {
             $output = $this->request('GET',['Beer','getBreweryBeers','4UcPMq']);
-        }
-        catch (CIPHPUnitTestExitException $e) {
+        } catch (CIPHPUnitTestExitException $e) {
             $output = 'Failed to run'; 
         }
         $this->assertContains('name', $output);
@@ -49,8 +47,7 @@ class Beer_test extends CIPHPUnitTestCase
     {
         try {
             $output = $this->request('POST',['Beer','searchBeerBrewery']);
-        }
-        catch (CIPHPUnitTestExitException $e) {
+        } catch (CIPHPUnitTestExitException $e) {
             $output = 'Failed to run';
         }
         $this->assertContains('Goosinator', $output);
