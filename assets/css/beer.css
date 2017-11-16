@@ -64,3 +64,6 @@ h2 {
     margin: 0;
     padding: 0;
 }
+.random-beers h2{
+    margin-bottom: 10px;
+}

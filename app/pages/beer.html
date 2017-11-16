@@ -14,20 +14,22 @@
 </div>
 <div class="clear-both"></div>
 <div class="buttons">
-   <input type="button" value="Another Beer" ng-click="anotherBeer()" />
-   <input type="button" value="More From This Brewery" ng-click="breweryBeers()" />    
+   <input type="button" class='btn btn-primary' value="Another Beer" ng-click="anotherBeer()" />
+   <input type="button" class='btn btn-primary' value="More From This Brewery" ng-click="breweryBeers()" />    
 </div>
 <hr>
 <div class='search-form'>
    <form name="searchForm" class="search-form">
+      <h3>Search</h3>
       <input type="text" ng-model="name" ng-trim="false" ng-pattern="regex" name="input" class="input-medium search-query" placeholder="Search with name" required/>
-      <button type="submit" class="btn" ng-click="formsubmit(searchForm.$valid)"  ng-disabled="userForm.$invalid">Submit </button>
+      <button type="submit" class="btn btn-primary" ng-click="formsubmit(searchForm.$valid)"  ng-disabled="userForm.$invalid">Submit </button>
       <br>
-      <input type="radio" ng-model="type" ng-checked="true" id="beer-select" name="type" value="beer"/><label for="beer-select">Beer</label>
-      <input type="radio" ng-model="type" id="brewery-select" name="type" value="brewery"/><label for="brewery-select">Brewery</label>
+      <label for="beer-select" class='radio-inline'><input type="radio" ng-model="type" ng-checked="true" id="beer-select" name="type" value="beer"/>Beer</label>
+      <label for="brewery-select" class='radio-inline'><input type="radio" ng-model="type" id="brewery-select" name="type" value="brewery"/>Brewery</label>
    </form>
 </div>
 <div class="brewery-beers hide">
+   <h3>Search Results</h3>
    <div ng-repeat="(key, value) in brewBeers">
       <div class="col-left small">
          <h2 class = "search-name">{{value.name}}</h2>
@@ -41,6 +43,7 @@
    </div>
 </div>
 <div class="search-types hide">
+   <h3>Search Results</h3>
    <div ng-repeat="(key, value) in searchTypes">
       <div class="col-left small">
          <h2 class = "search-name">{{value.name}}</h2>
@@ -54,6 +57,7 @@
    </div>
 </div>
 <div class="search-type-text hide">
-<p></p>
+   <h3>Search Results</h3>
+   <p></p>
 <div>
 </div>

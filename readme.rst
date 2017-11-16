@@ -1,70 +1,21 @@
-###################
-What is CodeIgniter
-###################
+###############################
+Distilled SCH Beer Application
+###############################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+This is a simple PHP website that interacts with the BreweryDB API which is built using technologies like PHP, CodeIgniter, Angular JS, jQuery, Html and Css. It also uses PHP Redis for caching and followed PSR-2 coding standard. Some features are:
+- It displays a random beer section (beer name, description and image) with two buttons "Another Beer" and "More From This Brewery".
+	- "Another Beer" displays other radom beer.
+	- "More From This Brewery" displays lists of beer from that brewery.
+- It also consists of a small search form where users can search for beers or breweries by free text search. Search field must only contain letters, numbers, hyphens and spaces else alert box appers with message "Form is not valid".
 
 *******************
-Release Information
+Other Information
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- It uses one page application to display random beers, beers in a brewery and search sections.
+- Composer packages like phpunit are used for testing purpose. If composer is not installed, it should be installed else "composer update" is used to add all packages in vendor folder.
+- Javascript library "AngularJs" is used which is maintained in app folder. "angular.min.js" is used for using angular properties whereas "angular-route.min.js" is used for routing purpose.
+- BreweryDb library is used to connect to brewery DB Api to get beers and breweries informations.
+- Used some classes from Bootstrap library.
+- It has been successfully tested in chrome and firefox.
 
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
